@@ -1,0 +1,11 @@
+/Users/camper/Projects/idontknow/idontknow/bin/Debug/netcoreapp2.1/idontknow.deps.json
+/Users/camper/Projects/idontknow/idontknow/bin/Debug/netcoreapp2.1/idontknow.runtimeconfig.json
+/Users/camper/Projects/idontknow/idontknow/bin/Debug/netcoreapp2.1/idontknow.runtimeconfig.dev.json
+/Users/camper/Projects/idontknow/idontknow/bin/Debug/netcoreapp2.1/idontknow.dll
+/Users/camper/Projects/idontknow/idontknow/bin/Debug/netcoreapp2.1/idontknow.pdb
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.csprojAssemblyReference.cache
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.csproj.CoreCompileInputs.cache
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.AssemblyInfoInputs.cache
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.AssemblyInfo.cs
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.dll
+/Users/camper/Projects/idontknow/idontknow/obj/Debug/netcoreapp2.1/idontknow.pdb
