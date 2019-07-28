@@ -9,7 +9,11 @@ namespace idontknow
     {
         static void Main(string[] args)
         {
-            string mpath = "/Users/Camper/Documents/x.txt";
+            //EDIT THESE FOR YOUR COMPUTER
+            const string computerUsername = "Camper"; //USERNAME OF YOUR ACCOUNT ON YOUR COMPUTER
+            //END OF EDIT
+
+            string mpath = "/Users/" + computerUsername + "/Documents/x.txt";
             string opath = "/Users";
             List<string> pathsOfFiles = new List<string>();
             List<string> keywords = new List<string>();
@@ -18,10 +22,11 @@ namespace idontknow
             queueForDirectories.Add(opath);
             int numberInQueue = 0;
             WebClient client = new WebClient();
-            string htmlCode = client.DownloadString("https://keywords--cblocksurprise.repl.co");
-            string otherHtmlCode = client.DownloadString("https://keywords--cblocksurprise.repl.co/blacklist");
+            string htmlCode = client.DownloadString("https://cblocksurprise.github.io/DataCrawler");
+            string otherHtmlCode = client.DownloadString("https://cblocksurprise.github.io/DataCrawler/blacklist");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
+            const int maxSizeForMoving = 10000;
 
             void SetColor(ConsoleColor colour) {
                 Console.ForegroundColor = colour;
@@ -73,7 +78,7 @@ namespace idontknow
             }
 
             void setKeywords() {
-                Console.WriteLine("Requesting keywords from https://keywords--cblocksurprise.repl.co...");
+                Console.WriteLine("Requesting keywords from https://cblocksurprise.github.io/DataCrawler...");
                 string removedBrackets = htmlCode.Replace("]", "");
                 removedBrackets = removedBrackets.Replace("[", "");
                 for (int j = 0; j < removedBrackets.Length; j++) {
@@ -92,7 +97,7 @@ namespace idontknow
 
             void setBlacklistKeywords()
             {
-                Console.WriteLine("Requesting blacklist from https://keywords--cblocksurprise.repl.co/blacklist...");
+                Console.WriteLine("Requesting blacklist from https://cblocksurprise.github.io/DataCrawler/blacklist...");
                 string removedBrackets = otherHtmlCode.Replace("]", "");
                 removedBrackets = removedBrackets.Replace("[", "");
                 for (int j = 0; j < removedBrackets.Length; j++)
@@ -105,7 +110,6 @@ namespace idontknow
                 for (int i = 0; i < removedBrackets.Split(",").Length; i++)
                 {
                     blacklist.Add(removedBrackets.Split(",")[i]);
-                    //Console.WriteLine(removedBrackets.Split(",")[i]);
                 }
 
                 Console.WriteLine("Gotten blacklist...");
@@ -116,6 +120,7 @@ namespace idontknow
                 SetBackground(ConsoleColor.Black);
                 setKeywords();
                 setBlacklistKeywords();
+                Console.WriteLine("Max size for moving file: " + maxSizeForMoving);
                 Console.WriteLine(File.Exists(mpath) ? "Base file exists." : "Base file does not exist.");
 
                 var reader = new StreamReader(mpath);
@@ -133,11 +138,10 @@ namespace idontknow
                 while (numberInQueue < queueForDirectories.Count) {
                     Console.WriteLine("\n\n");
                     SetColor(ConsoleColor.Red);
-                    //Console.WriteLine("Press enter to continue.");
-                    //if (Console.ReadLine() != "sadiufhoiasdufbciuasdf") {
                     SetColor(ConsoleColor.Green);
+                    //Get the files
                     Console.WriteLine(getPath());
-                    //}
+
 
                 }
                 Console.WriteLine("\n\n");
@@ -145,6 +149,9 @@ namespace idontknow
                 Console.WriteLine("Finished File Scan. Found " + pathsOfFiles.Count + " files related to keywords.");
                 Console.WriteLine("\n");
                 Console.WriteLine("Paths of files: ");
+                if (pathsOfFiles.Count < 20) {
+                    Console.WriteLine("Press enter to continue.");
+                }
                 for (int i = 0; i < pathsOfFiles.Count; i++) {
                     Console.WriteLine("\n");
                     SetColor(ConsoleColor.Green);
@@ -155,7 +162,13 @@ namespace idontknow
                     Console.WriteLine("Extension: " + info.Extension);
                     Console.WriteLine("Hash: " + info.GetHashCode().ToString());
                     Console.WriteLine("Keywords in name: " + containsWhatKeyword(info.Name.ToLower()));
+                    if (pathsOfFiles.Count < 20) {
+                        if (Console.ReadLine() == "uasf90ii4j90cru34vt8n4c5") {
+                            break;
+                        }
+                    }
                 }
+
                 Console.WriteLine("\n");
                 SetColor(ConsoleColor.White);
             }
