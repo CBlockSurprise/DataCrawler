@@ -12,3 +12,5 @@ Edit the computerUsername (at the top) and replace it with the username of your 
 ![](https://raw.githubusercontent.com/CBlockSurprise/DataCrawler/master/Screen%20Shot%202019-07-28%20at%2010.23.31%20AM.png)
 
 you can run it now.
+
+# you have to have a internet connection to run it.
