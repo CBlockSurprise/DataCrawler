@@ -7,3 +7,6 @@ Looks through all files on a computer, and finds all of the keyword related file
 
 # Running
 Just open it up in visual studio, and create a file in documents called 'x.txt', or just use [this](https://github.com/CBlockSurprise/DataCrawler/blob/master/x.txt) file.
+
+Edit the computerUsername (at the top) and replace it with the username of your account.
+![]()
