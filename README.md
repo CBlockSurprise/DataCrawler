@@ -13,4 +13,6 @@ Next, open it up in Visual Studio. Edit the variable ***computerUsername*** (at 
 
 It should work now if you run it, but if you have many files, it will take hours. If you have a computer with a very small amount of files, it'll run fast.
 
+You might want to clone this, and change the index.html words, but you will need to change the website it requests the words from in the C#.
+
 # You have to have a internet connection to run it.
