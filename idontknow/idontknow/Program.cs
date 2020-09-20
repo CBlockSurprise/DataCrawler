@@ -22,8 +22,9 @@ namespace idontknow
             queueForDirectories.Add(opath);
             int numberInQueue = 0;
             WebClient client = new WebClient();
-            string htmlCode = client.DownloadString("https://cblocksurprise.github.io/DataCrawler");
-            string otherHtmlCode = client.DownloadString("https://cblocksurprise.github.io/DataCrawler/blacklist");
+            String baseLink = "https://jaideng1.github.io";
+            string htmlCode = client.DownloadString(baseLink + "/DataCrawler");
+            string otherHtmlCode = client.DownloadString(baseLink + "/DataCrawler/blacklist");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
             const int maxSizeForMoving = 10000;
@@ -78,7 +79,7 @@ namespace idontknow
             }
 
             void setKeywords() {
-                Console.WriteLine("Requesting keywords from https://cblocksurprise.github.io/DataCrawler...");
+                Console.WriteLine("Requesting keywords from " + baseLink + "/DataCrawler...");
                 string removedBrackets = htmlCode.Replace("]", "");
                 removedBrackets = removedBrackets.Replace("[", "");
                 for (int j = 0; j < removedBrackets.Length; j++) {
@@ -97,7 +98,7 @@ namespace idontknow
 
             void setBlacklistKeywords()
             {
-                Console.WriteLine("Requesting blacklist from https://cblocksurprise.github.io/DataCrawler/blacklist...");
+                Console.WriteLine("Requesting blacklist from " + baseLink + "/DataCrawler/blacklist...");
                 string removedBrackets = otherHtmlCode.Replace("]", "");
                 removedBrackets = removedBrackets.Replace("[", "");
                 for (int j = 0; j < removedBrackets.Length; j++)
